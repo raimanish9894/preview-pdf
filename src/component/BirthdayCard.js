@@ -8,14 +8,7 @@ import "../component/style.css";
 const BirthdayCard = () => {
 
     const [message, setMessage] = useState("");
-
-    const [numPage, setNumPage] = useState(null);
-    const [pageumber, setpageNumber] = useState(1);
     const pdfRef = useRef();
-
-    const handleDocumentLoadSuccess = ({numPage}) => {
-        setNumPage(numPage);
-    };
 
     const convertToPdf = async() => {
         const canvas = await html2canvas(pdfRef.current);
